@@ -1,0 +1,113 @@
+{
+  "msg": "success",
+  "data": {
+    "objects": [
+      {
+        "key": 1,
+        "name": "界面",
+        "type": "interface",
+        "properties": [],
+        "methods": [
+          {
+            "name": "画图",
+            "type": "void",
+            "parameters": [],
+            "visibility": null
+          }
+        ],
+        "extendsObject": null
+      },
+      {
+        "key": 2,
+        "name": "试图",
+        "type": null,
+        "properties": [],
+        "methods": [],
+        "extendsObject": null
+      },
+      {
+        "key": 3,
+        "name": "装饰器",
+        "type": "interface",
+        "properties": [],
+        "methods": [],
+        "extendsObject": null
+      },
+      {
+        "key": 4,
+        "name": "滚轮",
+        "type": null,
+        "properties": [
+          {
+            "name": "滚轮",
+            "type": "int",
+            "visibility": "private"
+          }
+        ],
+        "methods": [
+          {
+            "name": "滚轮",
+            "type": "void",
+            "parameters": [],
+            "visibility": "public"
+          }
+        ],
+        "extendsObject": null
+      },
+      {
+        "key": 5,
+        "name": "白板",
+        "type": null,
+        "properties": [
+          {
+            "name": "宽度",
+            "type": "float",
+            "visibility": "private"
+          },
+          {
+            "name": "高度",
+            "type": "float",
+            "visibility": "private"
+          }
+        ],
+        "methods": [
+          {
+            "name": "画板",
+            "type": "void",
+            "parameters": [],
+            "visibility": "public"
+          }
+        ],
+        "extendsObject": null
+      }
+    ],
+    "relations": [
+      {
+        "from": 2,
+        "to": 1,
+        "type": "realization"
+      },
+      {
+        "from": 3,
+        "to": 1,
+        "type": "realization"
+      },
+      {
+        "from": 3,
+        "to": 1,
+        "type": "association"
+      },
+      {
+        "from": 4,
+        "to": 3,
+        "type": "realization"
+      },
+      {
+        "from": 5,
+        "to": 3,
+        "type": "realization"
+      }
+    ]
+  },
+  "success": true
+}

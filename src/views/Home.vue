@@ -115,9 +115,9 @@ export default {
       ],
       LinksModel:
           [
-            {from: 12, to: 11, relationship: "composition"},
-            {from: 13, to: 11, relationship: "generalization"},
-            {from: 14, to: 13, relationship: "aggregation"}
+            {from: 12, to: 11, type: "composition"},
+            {from: 13, to: 11, type: "generalization"},
+            {from: 14, to: 13, type: "aggregation"}
           ]
     };
   },
@@ -135,15 +135,22 @@ export default {
       recorder.stop()
       this.recorderDisabled = false;
       let PCMBlob = recorder.getPCMBlob();//获取 PCM 数据
+      //下载
+      // recorder.downloadPCM('新文件');
       let formdata = new FormData()
       formdata.append('file', PCMBlob)
       apis.submitAndRun(formdata).then(res=>{
-        // todo
-        console.log(res);
+        if(res.success){
+          this.NodesModel=res.data.objects
+          this.LinksModel=res.data.relations
+          setTimeout(()=>{
+            Bus.$emit("update")
+          },500)
+        }else{
+          this.$message.error(res.message)
+        }
       })
-      setTimeout(()=>{
-        Bus.$emit("update")
-      },500)
+
     }
   },
   //生命周期 - 创建之前",数据模型未加载,方法未加载,html模板未加载

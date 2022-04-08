@@ -141,13 +141,13 @@ export default {
 
       this.diagram.linkTemplate = GO(go.Link,
           {routing: go.Link.Orthogonal},
-          new go.Binding("isLayoutPositioned", "relationship", this.convertIsTreeLink),
-          GO(go.Shape, {}, new go.Binding("strokeDashArray", "relationship", this.convertLinkType)),
+          new go.Binding("isLayoutPositioned", "type", this.convertIsTreeLink),
+          GO(go.Shape, {}, new go.Binding("strokeDashArray", "type", this.convertLinkType)),
           GO(go.Shape, {scale: 1.3, fill: "white"},
-              new go.Binding("fromArrow", "relationship", this.convertFromArrow)),
+              new go.Binding("fromArrow", "type", this.convertFromArrow)),
           GO(go.Shape, {scale: 1.3},
-              new go.Binding("fill", "relationship", this.convertToColor),
-              new go.Binding("toArrow", "relationship", this.convertToArrow))
+              new go.Binding("fill", "type", this.convertToColor),
+              new go.Binding("toArrow", "type", this.convertToArrow))
       );
 
 

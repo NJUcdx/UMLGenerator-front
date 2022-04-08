@@ -1,10 +1,11 @@
 import request from '../utils/request';
 
-var url = "http://192.168.2.104:8080"
+var url = "http://localhost:8081"
 export default {
     submitAndRun: data => {
         return request({
-            url: url + '/saveSpeechFile',
+            // url: "../../data/getRouterInfo.json",
+            url: url+'/saveSpeechFile',
             method: "post",
             headers: {'Content-Type': 'multipart/form-data'},
             data: data
